@@ -18,7 +18,11 @@ public class FlaxTimer
     /// <summary>Event for when the countdown has ended</summary>
     public event Action OnEnded;
 
-    /// <summary>Starts the timer. Will stop automatically after countdown is over. Does nothing if the countdown already started.</summary>
+    /// <summary>
+    /// Starts the timer. Will stop automatically after countdown is over. 
+    /// Does nothing if the countdown already started. 
+    /// Make sure to call <see cref="Reset()"/> after a timer has ended to be able to restart it.
+    /// </summary>
     public void Start()
     {
         Scripting.Update -= Tick;
@@ -45,14 +49,14 @@ public class FlaxTimer
         Stop();
     }
 
-    /// <summary>Resets timer to creation state, so it can be started again</summary>
+    /// <summary>Resets the timer to inital state</summary>
     public void Reset()
     {
         countdown = initalTime;
         HasEnded = false;
     }
 
-    /// <summary>Resets timer to creation date,  so it can be started again</summary>
+    /// <summary>Resets the timer to inital state</summary>
     /// <param name="durationSeconds">The new duration of the countdown in seconds</param>
     public void Reset(float durationSeconds)
     {
@@ -61,7 +65,7 @@ public class FlaxTimer
         HasEnded = false;
     }
 
-    /// <summary>Creates a new instance of FlaxTimer</summary>
+    /// <summary>Creates a new instance of FlaxTimer. Don't forget to call <see cref="Dispose"/> when destroying or disabling the object this is in.</summary>
     /// <param name="durationSeconds">The time the countdown takes to finish in seconds</param>
     public FlaxTimer(float durationSeconds)
     {
