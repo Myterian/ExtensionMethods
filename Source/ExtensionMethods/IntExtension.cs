@@ -16,7 +16,7 @@ public static class IntExtension
         return value - Mathf.FloorToInt((float)value / maxValue) * maxValue;
     }
 
-    /// <summary>Returns a number between 0 and maxValue (inclusive), but is not the current number</summary>
+    /// <summary>Returns a number between 0 and maxValue (inclusive), but not the current number</summary>
     /// <param name="value">Current number</param>
     /// <param name="maxValue">Return value will not be larger than this</param>
     /// <returns>int</returns>
@@ -26,7 +26,7 @@ public static class IntExtension
         return (value + (int)new Random().NextInt64(1, (long)maxValue + 1)).Repeat(maxValue + 1);
     }
 
-    /// <summary>Returns a number between minValue (inclusive) and maxValue (inclusive), but is not the current number</summary>
+    /// <summary>Returns a number between minValue (inclusive) and maxValue (inclusive), but not the current number</summary>
     /// <param name="value">Current number</param>
     /// /// <param name="minValue">Return value will not be smaller than this</param>
     /// <param name="maxValue">Return value will not be larger than this</param>
