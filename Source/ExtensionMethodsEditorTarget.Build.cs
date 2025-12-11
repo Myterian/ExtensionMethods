@@ -1,6 +1,6 @@
 using Flax.Build;
 
-public class GameEditorTarget : GameProjectEditorTarget
+public class ExtensionMethodsEditorTarget : GameProjectEditorTarget
 {
     /// <inheritdoc />
     public override void Init()
@@ -8,7 +8,6 @@ public class GameEditorTarget : GameProjectEditorTarget
         base.Init();
 
         // Reference the modules for editor
-                Modules.Add(nameof(ExtensionMethods));
-        Modules.Add("Game");
+        Modules.Add(nameof(ExtensionMethods));
     }
 }

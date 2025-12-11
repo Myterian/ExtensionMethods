@@ -1,6 +1,6 @@
 using Flax.Build;
 
-public class GameTarget : GameProjectTarget
+public class ExtensionMethodsTarget : GameProjectTarget
 {
     /// <inheritdoc />
     public override void Init()
@@ -8,7 +8,6 @@ public class GameTarget : GameProjectTarget
         base.Init();
 
         // Reference the modules for game
-                Modules.Add(nameof(ExtensionMethods));
-        Modules.Add("Game");
+        Modules.Add(nameof(ExtensionMethods));
     }
 }

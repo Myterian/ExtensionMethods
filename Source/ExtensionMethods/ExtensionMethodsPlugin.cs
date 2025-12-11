@@ -1,4 +1,4 @@
-﻿
+
 using FlaxEngine;
 
 namespace ExtensionMethods;
@@ -15,6 +15,8 @@ public class ExtensionMethodsPlugin : GamePlugin
             Name = "Extension Methods",
             Description = "A collection of convenience methods for Flax's C# API",
             Author = "Thomas Jungclaus",
+            AuthorUrl = "https://github.com/Myterian/",
+            RepositoryUrl = "https://github.com/Myterian/ExtensionMethods.git",
             Category = "Extension Methods",
             IsAlpha = false,
             IsBeta = false,
