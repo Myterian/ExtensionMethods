@@ -16,16 +16,18 @@ public static class QuaternionExtension
         q.Z /= q.W;
         q.W = 1.0f;
 
+        Float3 boundsFloat = new((float)bounds.X, (float)bounds.Y, (float)bounds.Z);
+
         float angleX = 2.0f * Mathf.RadiansToDegrees * Mathf.Atan(q.X);
-        angleX = Mathf.Clamp(angleX, -bounds.X, bounds.X);
+        angleX = Mathf.Clamp(angleX, -boundsFloat.X, boundsFloat.X);
         q.X = Mathf.Tan(0.5f * Mathf.DegreesToRadians * angleX);
 
         float angleY = 2.0f * Mathf.RadiansToDegrees * Mathf.Atan(q.Y);
-        angleY = Mathf.Clamp(angleY, -bounds.Y, bounds.Y);
+        angleY = Mathf.Clamp(angleY, -boundsFloat.Y, boundsFloat.Y);
         q.Y = Mathf.Tan(0.5f * Mathf.DegreesToRadians * angleY);
 
         float angleZ = 2.0f * Mathf.RadiansToDegrees * Mathf.Atan(q.Z);
-        angleZ = Mathf.Clamp(angleZ, -bounds.Z, bounds.Z);
+        angleZ = Mathf.Clamp(angleZ, -boundsFloat.Z, boundsFloat.Z);
         q.Z = Mathf.Tan(0.5f * Mathf.DegreesToRadians * angleZ);
 
         Quaternion output = Quaternion.Normalize(q);

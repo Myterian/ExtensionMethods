@@ -41,7 +41,8 @@ public static class Vector3Extension
     public static Vector3 DirectionXZ(this Vector3 direction)
     {
         Vector3 newDirection = direction;
-        newDirection.Y = 0f;
+        Real zero = 0;
+        newDirection.Y = zero;
         return newDirection;
     }
 
@@ -51,7 +52,8 @@ public static class Vector3Extension
     public static Vector3 DirectionXZNormalized(this Vector3 direction)
     {
         Vector3 newDirection = direction;
-        newDirection.Y = 0f;
+        Real zero = 0;
+        newDirection.Y = zero;
         newDirection.Normalize();
         return newDirection;
     }
