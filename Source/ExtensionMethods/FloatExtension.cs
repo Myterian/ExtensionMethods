@@ -24,6 +24,7 @@ public static class FloatExtension
     /// <param name="newMin">Min value of new range</param>
     /// <param name="newMax">Max value of new range</param>
     /// <returns>float</returns>
+    [Obsolete("Use built-in Mathf.Remap instead")] 
     public static float Remap(this float value, float oldMin, float oldMax, float newMin, float newMax)
     {
         // Prevents dividing by 0
@@ -59,7 +60,6 @@ public static class FloatExtension
     /// <param name="newMax">Max value of new range</param>
     /// <param name="newCenter">Neutral point of new range</param>
     /// <returns>float</returns>
-    [Obsolete("Use built-in Mathf.Remap instead")] 
     public static float Remap(this float value, float oldMin, float oldMax, float newMin, float newMax, float newCenter)
     {
         // Prevents dividing by 0
@@ -79,7 +79,7 @@ public static class FloatExtension
         float output;
 
         // Uses lower or upper range, depending if we were below or above mid point of old range
-        if (percentageOfOldRange.IsInRange(0f, 0.5f))
+        if (Mathf.IsInRange(percentageOfOldRange, 0f, 0.5f))
             output = Mathf.Lerp(newMin, newCenter, percentageInLowerRange);
         else
             output = Mathf.Lerp(newCenter, newMax, percentageInUpperRange);
